@@ -21,7 +21,7 @@ jobs:
           # pre-commit install
 
       - name: black
-        run: black  --check hw1/
+        run: black hw1/
       - name: isort
         run: isort --check-only --diff hw1/
       - name: flake
