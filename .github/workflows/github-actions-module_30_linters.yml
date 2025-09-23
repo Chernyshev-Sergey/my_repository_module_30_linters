@@ -1,7 +1,4 @@
 name: Linters
-defaults:
-  run:
-    working-directory: hw1
 on: [pull_request,push]
 jobs:
   lint:
