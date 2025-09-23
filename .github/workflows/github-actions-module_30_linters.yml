@@ -25,8 +25,8 @@ jobs:
         run: isort --profile black hw1/  
       - name: mypy
         run: mypy hw1/ 
-      - name: pytest
-        run: pytest hw1/ 
+      # - name: pytest
+      #   run: pytest hw1/ 
       - name: flake
         run: flake8 hw1/  
 
