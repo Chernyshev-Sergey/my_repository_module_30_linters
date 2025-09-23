@@ -28,5 +28,5 @@ jobs:
       # - name: mypy
       #   run: mypy hw1/ 
       - name: pytest
-        run: pytest hw1/tests  
+        run: pytest hw1/  
 
