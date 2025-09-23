@@ -1,23 +1,38 @@
 on: [pull_request,push]
-jobs:
-  uses: python:3.12
-  
-  before-script:
-    steps:
-      - pip install -r requirements.txt
 
-unittest:
-  steps:
-    - pytest tests
-mypy:
-  steps:
-    - mypy hw1/
-black:
-  steps:
-    - black --diff --check src/
-isort:
-  steps:
-    - isort --check-only --diff src/
-flask8:
-  steps:
-    - flake8 hw1/
+steps:
+- uses: actions/checkout@v5
+- uses: actions/setup-python@v5
+  with:
+    python-version: '3.12'
+    cache: 'pip'
+- run: pip install -r hw1/requirements.txt
+- run: pytest tests
+- run: mypy hw1/
+- run: black --diff --check hw1/
+- run: isort --check-only --diff src/
+- run: isort --check-only --diff src/
+- run: flake8 hw1/
+
+# jobs:
+#   uses: python:3.12
+  
+#   before-script:
+#     steps:
+#       - pip install -r requirements.txt
+
+#   unittest:
+#     steps:
+#       - 
+#   mypy:
+#     steps:
+#       - mypy hw1/
+#   black:
+#     steps:
+#       - black --diff --check src/
+#   isort:
+#     steps:
+#       - run: isort --check-only --diff src/
+#   flask8:
+#     steps:
+#       - run: flake8 hw1/
