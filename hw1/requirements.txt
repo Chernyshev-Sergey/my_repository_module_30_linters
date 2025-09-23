@@ -11,3 +11,4 @@ SQLAlchemy==2.0.41
 httpx==0.28.1
 aiosqlite==0.21.0
 Jinja2==3.1.6
+flake8-length-0.3.1
