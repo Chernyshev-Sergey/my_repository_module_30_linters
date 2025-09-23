@@ -26,7 +26,7 @@ jobs:
       - name: mypy
         run: mypy hw1/ 
       - name: pytest
-        run: pytest --rootdir=/ hw1/ 
+        run: pytest  hw1/test_main.py --rootdir=hw1 
       - name: flake
         run: flake8 hw1/  
 
