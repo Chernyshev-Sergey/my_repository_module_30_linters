@@ -1,40 +1,23 @@
 on: [pull_request,push]
-workflow:
-  rules:
-    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
-
-image: python:3.7
-
-
-stages:
-  - build
-  - test
-
-
-before-script:
-    - pip install -r requirements.txt
+jobs:
+  uses: python:3.12
+  
+  before-script:
+    steps:
+      - pip install -r requirements.txt
 
 unittest:
-  stage: test
-  script:
+  steps:
     - pytest tests
-
 mypy:
-  stage: test
-  script:
-    - mypy src/
-
+  steps:
+    - mypy hw1/
 black:
-  stage: test
-  script:
+  steps:
     - black --diff --check src/
-
 isort:
-  stage: test
-  script:
-    - isort --check-only src/
-
+  steps:
+    - isort --check-only --diff src/
 flask8:
-  stage: test
-  script:
-    - flake8 src/
+  steps:
+    - flake8 hw1/
