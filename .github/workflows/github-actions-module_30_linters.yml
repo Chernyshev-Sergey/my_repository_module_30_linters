@@ -1,5 +1,9 @@
 name: Linters
 on: [pull_request,push]
+
+defaults:
+  run:
+    working-directory: hw1
 jobs:
   lint:
     name: Run Linter
