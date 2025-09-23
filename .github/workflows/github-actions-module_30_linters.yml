@@ -1,18 +1,19 @@
 on: [pull_request,push]
+jsobs:
 
-steps:
-- uses: actions/checkout@v5
-- uses: actions/setup-python@v5
-  with:
-    python-version: '3.12'
-    cache: 'pip'
-- run: pip install -r hw1/requirements.txt
-- run: pytest tests
-- run: mypy hw1/
-- run: black --diff --check hw1/
-- run: isort --check-only --diff src/
-- run: isort --check-only --diff src/
-- run: flake8 hw1/
+  steps:
+    - uses: actions/checkout@v5
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        cache: 'pip'
+    - run: pip install -r hw1/requirements.txt
+    - run: pytest tests
+    - run: mypy hw1/
+    - run: black --diff --check hw1/
+    - run: isort --check-only --diff hw1/
+    - run: isort --check-only --diff hw1/
+    - run: flake8 hw1/
 
 # jobs:
 #   uses: python:3.12
