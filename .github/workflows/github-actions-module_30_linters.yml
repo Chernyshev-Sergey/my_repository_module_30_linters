@@ -28,6 +28,6 @@ jobs:
       - name: flake
         run: flake8 hw1/  
       - name: test_httpx
-        run: cd hw1 && python test_main.py  
+        run: python hw1/test_main.py  
         
 
