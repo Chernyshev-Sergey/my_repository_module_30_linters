@@ -15,13 +15,13 @@ templates = Jinja2Templates(directory="templates")
 router = APIRouter()
 
 
-@router.post("/recipes", response_model=schemas.RecipeBookOut)
-async def recipe_book_post(book: schemas.RecipeBookIn) -> models.RecipeBook:
-    new_recipe = models.RecipeBook(**book.model_dump())
-    async with session.begin():
-        session.add(new_recipe)
-    await session.commit()
-    return new_recipe
+# @router.post("/recipes", response_model=schemas.RecipeBookOut)
+# async def recipe_book_post(book: schemas.RecipeBookIn) -> models.RecipeBook:
+#     new_recipe = models.RecipeBook(**book.model_dump())
+#     async with session.begin():
+#         session.add(new_recipe)
+#     await session.commit()
+#     return new_recipe
 
 
 @router.get("/recipes", response_model=List[schemas.RecipeBookList])
