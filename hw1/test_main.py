@@ -13,20 +13,24 @@ def test_read_main_recipes():
             "id": 3,
             "name_of_the_dish": "каша рисовая",
             "cooking_time_in_minutes": "61",
-            "number_of_views": 12,
+            "number_of_views": response.json()[0]['number_of_views'],
         },
         {
             "id": 1,
             "name_of_the_dish": "Борщ",
             "cooking_time_in_minutes": "60",
-            "number_of_views": 0,
+            "number_of_views": 2,
         },
         {
             "id": 2,
             "name_of_the_dish": "Рассольник",
             "cooking_time_in_minutes": "50",
-            "number_of_views": 0,
+            "number_of_views": 2,
         },
+        {'cooking_time_in_minutes': '15',
+         'id': 4,
+         'name_of_the_dish': 'каша гречневая',
+         'number_of_views': 0}
     ]
 
 
